@@ -1,0 +1,10 @@
+%h1= @entry.title
+%h2= @entry.subtitle
+%h3= @entry.category
+%h4= @entry.updated_at
+%entry
+	= @entry.post
+
+= link_to "Back", entries_path
+
+= render "disqus"

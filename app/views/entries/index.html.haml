@@ -1,0 +1,12 @@
+%h1 Hello!
+%br
+- if current_user
+  = link_to "New Entry", new_entry_path
+- @entries.each do |e|
+  %h2= link_to e.title, e
+  %h3= e.subtitle
+  %br
+  - if current_user
+    = link_to "Edit", edit_entry_path(e)
+    = button_to "Delete", entry_path(e), :confirm => "Really really?", :method => :delete
+  %hr
