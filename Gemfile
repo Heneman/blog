@@ -12,12 +12,10 @@ gem 'pg'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  # gem 'slim-rails', '~> 1.0.3'
   gem 'haml'
   gem 'haml-rails'
-  # gem 'redcarpet'
-  # gem 'albino'
-  # gem 'nokogiri'
+  gem 'redcarpet'
+  gem 'nokogiri'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -27,7 +25,6 @@ end
 
 gem 'jquery-rails'
 gem 'acts-as-taggable-on', '~> 2.3.1'
-gem 'carrierwave', '~> 0.6.2'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', :require => 'bcrypt'

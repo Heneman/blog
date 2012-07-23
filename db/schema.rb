@@ -11,22 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716074033) do
+ActiveRecord::Schema.define(:version => 20120723032022) do
 
   create_table "entries", :force => true do |t|
     t.string   "title"
-    t.string   "subtitle"
     t.string   "category"
-    t.text     "post"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
     t.string   "subcategory"
     t.string   "topic"
+    t.text     "markdown"
+    t.text     "html"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
-
-  add_index "entries", ["category"], :name => "index_entries_on_category"
-  add_index "entries", ["subcategory"], :name => "index_entries_on_subcategory"
-  add_index "entries", ["topic"], :name => "index_entries_on_topic"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

@@ -1,0 +1,22 @@
+- if @entry.errors
+  - @entry.errors.messages.each do |message|
+    = message
+
+
+= form_for @entry do |f|
+  = f.label :title, 'title'
+  = f.text_field :title
+  %br
+  = f.label :category_list, 'category'
+  = f.text_field :category_list
+  %br
+  = f.label :subcategory_list, 'subcategory'
+  = f.text_field :subcategory_list
+  %br
+  = f.label :topic_list, 'topic'
+  = f.text_field :topic_list
+  %br
+  = f.label :markdown, 'markdown'
+  = f.text_area :markdown
+  %br
+  = f.submit

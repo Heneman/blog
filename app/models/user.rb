@@ -1,14 +1,15 @@
 class User < ActiveRecord::Base
-  has_many :entries
+  has_many :code_entries
+  has_many :food_entries
+  has_many :inclusive_entries
 
   attr_accessor :password
   attr_accessible :email, :password, :password_confirmation, :last_login_at
   before_save :encrypt_password, :add_datetime
 
-  validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
-  validates_presence_of :email
+  validates_presence_of :email, :password, :on => :create
   validates_uniqueness_of :email
+  validates_confirmation_of :password
 
   def encrypt_password
     if password.present?

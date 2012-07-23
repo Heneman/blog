@@ -1,19 +1,14 @@
 Blog::Application.routes.draw do
-  resources :comments
-
   resources :users
+  resources :entries
   resources :sessions
-  resources :entries do
-    resources :comments
-  end
-  root :to => "entries#index"
   
-  get "login" => "sessions#new", :as => "login"
-  get "logout" => "sessions#destroy", :as => "logout"
+  root :to => 'entries#index'
+  
+  get 'login' => 'sessions#new', :as => 'login'
+  get 'logout' => 'sessions#destroy', :as => 'logout'
 
-  get "entries/comment"
-  post "entries/comment"
-  get "users/new"
+  get 'users/new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
