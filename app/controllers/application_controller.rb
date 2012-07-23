@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_action
     if params[:controller] == 'entries'
-      authenticate_user unless params[:action] == 'index' || params[:action] == 'show'
+      authenticate_user unless params[:action] == 'index' || params[:action] == 'show' || params[:action] == 'code' || params[:action] == 'food'  || params[:action] == 'kyle'
     elsif params[:controller] == 'sessions'
       authenticate_user unless params[:action] == 'new' || params[:action] == 'destroy'
     else

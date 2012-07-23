@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :code_entries
-  has_many :food_entries
-  has_many :inclusive_entries
+  has_many :entries
 
   attr_accessor :password
   attr_accessible :email, :password, :password_confirmation, :last_login_at

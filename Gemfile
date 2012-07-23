@@ -10,10 +10,9 @@ gem 'pg'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
   gem 'haml'
   gem 'haml-rails'
+  gem 'sass-rails',   '~> 3.2.3'
   gem 'redcarpet'
   gem 'nokogiri'
 
@@ -41,7 +40,4 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 # To use debugger
 gem 'debugger'
 
-# group :development do
-#   gem 'hpricot'
-#   gem 'ruby_parser'
-# end
+gem 'will-paginate'

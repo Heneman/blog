@@ -1,0 +1,10 @@
+%h1= @entry.title
+- if current_user
+  = link_to 'edit', edit_entry_path(@entry)
+%ul.tags
+  %li= @entry.category_list
+  %li= @entry.subcategory_list
+  %li= @entry.topic_list
+%h3= @entry.updated_at
+.entry
+  = raw @entry.html

@@ -2,13 +2,16 @@ Blog::Application.routes.draw do
   resources :users
   resources :entries
   resources :sessions
-  
-  root :to => 'entries#index'
-  
+
+  get 'code' => 'code#index', :as => 'code'
+  get 'food' => 'food#index', :as => 'food'
+  get 'kyle' => 'kyle#index', :as => 'kyle'
+
   get 'login' => 'sessions#new', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'
-
   get 'users/new'
+
+  root :to => 'entries#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

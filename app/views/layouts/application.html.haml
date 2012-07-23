@@ -8,6 +8,9 @@
   %body
     - if current_user
       = link_to 'home', :root
+      = link_to 'code', code_path
+      = link_to 'food', food_path
+      = link_to 'kyle', kyle_path
       = link_to 'new entry', new_entry_path
       = link_to 'log out', logout_path
     = yield
