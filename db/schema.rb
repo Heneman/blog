@@ -11,17 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723032022) do
+ActiveRecord::Schema.define(:version => 20120724221816) do
 
   create_table "entries", :force => true do |t|
     t.string   "title"
     t.string   "category"
-    t.string   "subcategory"
-    t.string   "topic"
+    t.string   "tags"
     t.text     "markdown"
     t.text     "html"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "taggings", :force => true do |t|
@@ -47,7 +46,6 @@ ActiveRecord::Schema.define(:version => 20120723032022) do
     t.string   "password_salt"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.datetime "last_login_at", :null => false
   end
 
 end

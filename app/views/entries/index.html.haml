@@ -1,12 +1,14 @@
 %h1 hallo!
--debugger
 - @entries.each do |e|
   %h2= link_to e.title, e
   %ul.tags
-    %li= e.category_list
-    %li= e.subcategory_list
-    %li= e.topic_list
+    - e.tag_list.each do |tag|
+      %li= link_to tag, tag_path(tag)
   %h4= e.updated_at
   %p= raw excerpt e
+  %p [#{link_to('more', e)}]
   - if current_user
     = link_to 'edit', edit_entry_path(e)
+    = button_to 'delete', entry_path(e), :confirm => 'Really really?', :method => :delete
+  %hr
+= will_paginate @entries

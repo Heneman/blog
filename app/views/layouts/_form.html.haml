@@ -2,19 +2,15 @@
   - @entry.errors.messages.each do |message|
     = message
 
-
 = form_for @entry do |f|
   = f.label :title, 'title'
   = f.text_field :title
   %br
-  = f.label :category_list, 'category'
-  = f.text_field :category_list
+  = f.label :category, 'category'
+  = f.select :category, ['--------','code']
   %br
-  = f.label :subcategory_list, 'subcategory'
-  = f.text_field :subcategory_list
-  %br
-  = f.label :topic_list, 'topic'
-  = f.text_field :topic_list
+  = f.label :tag_list, 'tags'
+  = f.text_field :tag_list
   %br
   = f.label :markdown, 'markdown'
   = f.text_area :markdown

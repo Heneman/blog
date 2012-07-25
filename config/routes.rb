@@ -4,8 +4,9 @@ Blog::Application.routes.draw do
   resources :sessions
 
   get 'code' => 'code#index', :as => 'code'
-  get 'food' => 'food#index', :as => 'food'
-  get 'kyle' => 'kyle#index', :as => 'kyle'
+  # get 'projects' => 'projects#index', :as => 'projects'
+
+  match 'tag' => 'tag#index#format'
 
   get 'login' => 'sessions#new', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'

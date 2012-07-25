@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  include ActionView::Helpers::SanitizeHelper
-  include ActionView::Helpers::TextHelper
 
   protect_from_forgery
   helper_method :current_user, :authenticate_action
@@ -13,10 +11,17 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_action
-    if params[:controller] == 'entries'
-      authenticate_user unless params[:action] == 'index' || params[:action] == 'show' || params[:action] == 'code' || params[:action] == 'food'  || params[:action] == 'kyle'
-    elsif params[:controller] == 'sessions'
-      authenticate_user unless params[:action] == 'new' || params[:action] == 'destroy'
+    par_con = params[:controller]
+    par_act = params[:action]
+    ses_acts = ['new''destroy'] # available 'session' actions
+    ses = ['sessions']
+    con = ['entries','code','tag'] # available controllers #TODO - con << 'projects'
+    act = ['index','show'] # available actions
+
+    if con.include? par_con
+      authenticate_user unless act.include? par_act
+    elsif par_con == ses
+      authenticate_user unless ses_act.include? par_act
     else
       authenticate_user
     end

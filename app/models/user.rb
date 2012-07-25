@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :password
   attr_accessible :email, :password, :password_confirmation, :last_login_at
+  attr_protected :password_hash
+
   before_save :encrypt_password, :add_datetime
 
   validates_presence_of :email, :password, :on => :create

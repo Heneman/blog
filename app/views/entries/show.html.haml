@@ -1,10 +1,12 @@
 %h1= @entry.title
 - if current_user
   = link_to 'edit', edit_entry_path(@entry)
+  = button_to 'delete', entry_path(@entry), :confirm => 'Really really?', :method => :delete
 %ul.tags
-  %li= @entry.category_list
-  %li= @entry.subcategory_list
-  %li= @entry.topic_list
+  - @entry.tag_list.each do |tag|
+    %li= link_to tag, tag_path(tag)
 %h3= @entry.updated_at
 .entry
   = raw @entry.html
+
+= render :partial => 'layouts/disqus'

@@ -1,9 +1,8 @@
 class EntriesController < ApplicationController
-
   before_filter :authenticate_action
 
   def index
-    @entries = Entry.order('created_at desc')
+    @entries = Entry.order('created_at desc').paginate(:page => params[:page], :per_page => 10)
   end
 
   def new
@@ -15,6 +14,12 @@ class EntriesController < ApplicationController
   end
 
   def create
+    ent_cat = params[:entry][:category]
+    
+    if ent_cat == '--------'
+      ent_cat = ''
+    end
+
     @entry = Entry.new(params[:entry])
 
     if @entry.save

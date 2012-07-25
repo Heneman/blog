@@ -23,6 +23,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'will_paginate', '~> 3.0'
 gem 'acts-as-taggable-on', '~> 2.3.1'
 
 # To use ActiveModel has_secure_password
@@ -39,5 +40,3 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # To use debugger
 gem 'debugger'
-
-gem 'will-paginate'
