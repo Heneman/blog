@@ -1,5 +1,5 @@
 - @entries.each do |e|
-  %h1= link_to e.title, entry_path(e)
+  %h1= link_to e.title, e
   .admin
     - if current_user
       = link_to 'Edit', edit_entry_path(e)
@@ -16,6 +16,6 @@
     %br
     = "Category - "
     = link_to e.category, category_path(:category => e.category)
-  .date= e.updated_at.localtime.strftime('* %a, %b %-e, %Y @ %l:%M%p') 
-  %br   
+  .date= e.updated_at.localtime.strftime('* %a, %b %-e, %Y @ %l:%M%p')
+  %br
 = will_paginate @entries

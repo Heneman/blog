@@ -1,7 +1,7 @@
 class Entry < ActiveRecord::Base
   before_save :render_html
   belongs_to :user
-  validates_presence_of :title, :category, :tag_list, :markdown
+  validates_presence_of :title, :tag_list, :markdown
   delegate  :title?, :category?, :markdown?, :to => :user
   attr_accessible :title, :category, :tag_list, :markdown, :created_at, :updated_at
 
@@ -14,7 +14,6 @@ class Entry < ActiveRecord::Base
 
     renderer = Redcarpet::Render::HTML.new(
                 :with_toc_data => true,
-                :hard_wrap => true,
                 :xhtml => true)
 
     extensions = {:no_intra_emphasis => true,

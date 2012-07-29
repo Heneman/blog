@@ -3,16 +3,16 @@
     = message
 
 = form_for @entry do |f|
-  = f.label :title, 'title'
+  = f.label :title, 'Title'
   = f.text_field :title
   %br
-  = f.label :category, 'category'
-  = f.select :category, ['--------','code']
+  = f.label :category, 'Category'
+  = f.select :category, ['Misc','Code']
   %br
-  = f.label :tag_list, 'tags'
+  = f.label :tag_list, 'Tags'
   = f.text_field :tag_list
   %br
-  = f.label :markdown, 'markdown'
+  = f.label :markdown, 'Markdown'
   = f.text_area :markdown
   %br
   = f.submit

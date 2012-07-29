@@ -3,10 +3,9 @@ Blog::Application.routes.draw do
   resources :entries
   resources :sessions
 
-  get 'code' => 'code#index', :as => 'code'
-  # get 'projects' => 'projects#index', :as => 'projects'
-
-  match 'tag' => 'tag#index#format'
+  # get 'projects' => 'projects#index', :as => 'projects'\
+  match 'category/:category' => 'categories#index', :as => 'category'
+  match 'tag/:tag' => 'tags#index', :as => 'tag'
 
   get 'login' => 'sessions#new', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'

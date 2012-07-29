@@ -1,12 +1,18 @@
+.admin
+  - if current_user
+    = link_to 'Edit', edit_entry_path(@entry)
+    = link_to 'Delete', entry_path(@entry), :confirm => 'Really really?', :method => :delete
 %h1= @entry.title
-- if current_user
-  = link_to 'edit', edit_entry_path(@entry)
-  = button_to 'delete', entry_path(@entry), :confirm => 'Really really?', :method => :delete
-%ul.tags
-  - @entry.tag_list.each do |tag|
-    %li= link_to tag, tag_path(tag)
-%h3= @entry.updated_at
 .entry
   = raw @entry.html
 
+.tags
+  = "Tags - "
+  - @entry.tag_list.each do |tag|
+    = link_to tag, tag_path(:tag => tag)
+  %br
+  = "Category - "
+  = link_to @entry.category, category_path(@entry.category)
+.date= @entry.updated_at.localtime.strftime('* %a, %b %-e, %Y @ %l:%M%p')
+%br
 = render :partial => 'layouts/disqus'

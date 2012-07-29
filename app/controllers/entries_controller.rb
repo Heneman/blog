@@ -14,12 +14,6 @@ class EntriesController < ApplicationController
   end
 
   def create
-    ent_cat = params[:entry][:category]
-    
-    if ent_cat == '--------'
-      ent_cat = ''
-    end
-
     @entry = Entry.new(params[:entry])
 
     if @entry.save

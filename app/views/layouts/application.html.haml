@@ -5,11 +5,14 @@
     = stylesheet_link_tag    'application', :media => 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
+    %link{:href => "http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Sans+Mono|Droid+Serif:400,400italic", :rel => "stylesheet", :type => "text/css"}
+
   %body
-    = link_to 'home', :root
-    = link_to 'code', code_path
-    - if current_user
-      = link_to 'new entry', new_entry_path
-      = link_to 'log out', logout_path
+    .logo
+      = link_to 'KH', :root
+    .admin
+      - if current_user
+        = link_to 'New Entry', new_entry_path
+        = link_to 'Logout', logout_path
     = yield
   %footer

@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  WillPaginate::ViewHelpers.pagination_options[:next_label] = 'Older'
+  WillPaginate::ViewHelpers.pagination_options[:previous_label] = 'Newer'
+
 
   protect_from_forgery
   helper_method :current_user, :authenticate_action
@@ -13,9 +16,9 @@ class ApplicationController < ActionController::Base
   def authenticate_action
     par_con = params[:controller]
     par_act = params[:action]
-    ses_acts = ['new''destroy'] # available 'session' actions
+    ses_acts = ['new','destroy'] # available 'session' actions
     ses = ['sessions']
-    con = ['entries','code','tag'] # available controllers #TODO - con << 'projects'
+    con = ['entries','categories','tags'] # available controllers #TODO - con << 'projects'
     act = ['index','show'] # available actions
 
     if con.include? par_con
