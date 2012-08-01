@@ -7,6 +7,7 @@ Blog::Application.routes.draw do
   match 'category/:category' => 'categories#index', :as => 'category'
   match 'tag/:tag' => 'tags#index', :as => 'tag'
 
+  get 'license' => 'license#index', :as => 'license'
   get 'login' => 'sessions#new', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'
   get 'users/new'

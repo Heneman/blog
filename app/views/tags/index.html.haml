@@ -10,11 +10,11 @@
   - else
     = raw e.html
   .tags
-    = "Tags - "
+    = "* Tags - "
     - e.tag_list.each do |tag|
       = link_to tag, tag_path(:tag => tag)
     %br
-    = "Category - "
+    = "* Category - "
     = link_to e.category, category_path(:category => e.category)
   .date= e.updated_at.localtime.strftime('* %a, %b %-e, %Y @ %l:%M%p')
   %br
