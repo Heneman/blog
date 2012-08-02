@@ -6,13 +6,16 @@
   = f.label :title, 'Title'
   = f.text_field :title
   %br
-  = f.label :category, 'Category'
-  = f.select :category, ['Code', 'Misc']
   %br
   = f.label :tag_list, 'Tags'
   = f.text_field :tag_list
   %br
+  %br
+  = f.label :category, 'Category'
+  = f.select :category, ['Code', 'Misc']
+  %br
+  %br
   = f.label :markdown, 'Markdown'
-  = f.text_area :markdown
+  = f.text_area :markdown, :cols => 100, :rows => 25
   %br
   = f.submit
