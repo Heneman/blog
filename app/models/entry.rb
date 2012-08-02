@@ -1,4 +1,6 @@
 class Entry < ActiveRecord::Base
+  require 'RedCarpet'
+
   before_save :render_html
   belongs_to :user
   validates_presence_of :title, :tag_list, :markdown
