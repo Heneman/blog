@@ -11,7 +11,7 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = Entry.find_by_id(params[:id])
+    @entry = Entry.find_by_slug(params[:id])
   end
 
   def create
@@ -26,11 +26,11 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    @entry = Entry.find_by_id(params[:id])
+    @entry = Entry.find_by_slug(params[:id])
   end
 
   def update
-    @entry = Entry.find_by_id(params[:id])
+    @entry = Entry.find_by_slug(params[:id])
     if @entry.update_attributes(params[:entry])
       redirect_to entry_path(@entry), :notice => '#{@entry.title} has been updated'
     else
@@ -40,7 +40,7 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    @entry = Entry.find_by_id(params[:id])
+    @entry = Entry.find_by_slug(params[:id])
     @entry.destroy
     redirect_to entries_path, :notice => '#{@entry.title} has been deleted'
   end

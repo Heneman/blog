@@ -1,15 +1,19 @@
 class Entry < ActiveRecord::Base
+  include FriendlyId
   require 'redcarpet'
 
   before_save :render_html
   belongs_to :user
-  validates_presence_of :title, :tag_list, :markdown
+  validates_presence_of :title, :tag_list, :markdown, :slug
   delegate  :title?, :category?, :markdown?, :to => :user
-  attr_accessible :title, :category, :tag_list, :markdown, :created_at, :updated_at
+  attr_accessible :title, :category, :tag_list, :markdown, :created_at, :updated_at, :slug
 
   # acts-as-taggable-on
   acts_as_taggable
   acts_as_taggable_on :tags
+
+  # FriendlyID
+  friendly_id :title, :use => :slugged
   
   def render_html
     return if self.markdown.blank?

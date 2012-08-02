@@ -31,6 +31,7 @@ gem 'sass-rails',   '~> 3.2.3'
 gem 'jquery-rails'
 gem 'will_paginate', '~> 3.0'
 gem 'acts-as-taggable-on', '~> 2.3.1'
+gem 'friendly_id'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', :require => 'bcrypt'
