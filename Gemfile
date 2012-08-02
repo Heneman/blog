@@ -16,8 +16,6 @@ end
 # in production environments by default.
 group :assets do
   gem 'haml'
-  gem 'haml-rails'
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'redcarpet'
   gem 'nokogiri'
 
@@ -26,6 +24,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'haml-rails'
+gem 'sass-rails',   '~> 3.2.3'
 
 gem 'jquery-rails'
 gem 'will_paginate', '~> 3.0'
