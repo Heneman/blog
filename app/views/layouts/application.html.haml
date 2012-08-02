@@ -13,7 +13,11 @@
         - if params[:category] == 'Code'
           = link_to 'Code', category_path(:category => 'Code'), :class => 'selected'
         - else
-          = link_to 'Code', category_path(:category => 'Code'), :class => 'code'
+          = link_to 'Code', category_path(:category => 'Code'), :class => 'nav'
+        - if params[:category] == 'Misc'
+          = link_to 'Misc', category_path(:category => 'Misc'), :class => 'selected'
+        - else
+          = link_to 'Misc', category_path(:category => 'Misc'), :class => 'nav'
     .admin
       - if current_user
         = link_to 'New Entry', new_entry_path
