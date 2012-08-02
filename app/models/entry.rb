@@ -33,6 +33,7 @@ end
 
 require 'net/http'
 require 'uri'
+require 'nokogiri'
 
 class SyntaxHighlighter
   PYGMENTS_URI = 'http://pygments.appspot.com/'
