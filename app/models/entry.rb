@@ -1,5 +1,5 @@
 class Entry < ActiveRecord::Base
-  require 'RedCarpet'
+  require 'redcarpet'
 
   before_save :render_html
   belongs_to :user
