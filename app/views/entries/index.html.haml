@@ -9,6 +9,7 @@
     %p [#{link_to('more...', e)}]
   - else
     = raw e.html
+  %br
   .tags
     = "* Tags - "
     - e.tag_list.each do |tag|
@@ -17,5 +18,5 @@
     = "* Category - "
     = link_to e.category, category_path(:category => e.category)
   .date= e.updated_at.localtime.strftime('* %a, %b %-e, %Y @ %l:%M%p') 
-  %br   
+  %br
 = will_paginate @entries

@@ -10,6 +10,10 @@
     .header
       .logo
         = link_to 'KH', :root, :class => 'header'
+        - if params[:category] == 'Projects'
+          = link_to 'Projects', category_path(:category => 'Projects'), :class => 'selected'
+        -else
+          = link_to 'Projects', category_path(:category => 'Projects'), :class => 'nav'
         - if params[:category] == 'Code'
           = link_to 'Code', category_path(:category => 'Code'), :class => 'selected'
         - else
