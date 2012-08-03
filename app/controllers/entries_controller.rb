@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_filter :authenticate_action
 
   def index
-    @entries = Entry.order('created_at desc').where(:category != 'Projects').paginate(:page => params[:page], :per_page => 5)
+    @entries = Entry.order('created_at desc').paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
