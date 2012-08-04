@@ -1,4 +1,4 @@
-div.highlight pre {background-color: #272822; font-size: 14px;font: "Droid Sans Mono"; border-radius: 10px; padding: 20px; overflow: scroll}
+div.highlight pre {background-color: #272822; font-size: 14px;font: "Droid Sans Mono"; border-radius: 10px; padding: 10px; overflow: scroll}
 div.highlight pre .hll { background-color: #49483e }
 div.highlight pre .c { color: #75715e } /* Comment */
 div.highlight pre .err { color: #960050; background-color: #1e0010 } /* Error */
