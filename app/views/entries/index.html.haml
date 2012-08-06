@@ -18,6 +18,6 @@
     %br
     = "* Category - "
     = link_to e.category, category_path(:category => e.category)
-  .date= e.updated_at.zone.strftime('* %a, %b %-e, %Y @ %l:%M%p') 
+  .date= e.updated_at.localtime("-05:00").strftime('* %a, %b %-e, %Y @ %l:%M%p') 
   %br
 = will_paginate @entries
