@@ -1,4 +1,4 @@
-class AddIndexOnSlugEntries < ActiveRecord::Migration
+class AddIndexOnEntriesSlug < ActiveRecord::Migration
   def up
     add_index :entries, :slug, :unique => true
   end
