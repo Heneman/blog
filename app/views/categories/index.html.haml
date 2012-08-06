@@ -16,6 +16,6 @@
     %br
     = "* Category - "
     = link_to e.category, category_path(:category => e.category)
-  .date= e.updated_at.strftime('* %a, %b %-e, %Y @ %l:%M%p %Z')
+  .date= e.updated_at.strftime('* %a, %b %-e, %Y @ %l:%M %p %Z')
   %br
 = will_paginate @entries
