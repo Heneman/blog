@@ -14,6 +14,6 @@
   %br
   = "* Category - "
   = link_to @entry.category, category_path(@entry.category)
-.date= @entry.updated_at.localtime.strftime('* %a, %b %-e, %Y @ %l:%M%p %z')
+.date= @entry.updated_at.strftime('* %a, %b %-e, %Y @ %l:%M%p %Z')
 %br
 = render :partial => 'layouts/disqus'
