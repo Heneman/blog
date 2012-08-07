@@ -9,6 +9,7 @@
     %p [#{link_to('more...', e)}]
   - else
     = raw e.html
+  %br
   .tags
     = "* Tags - "
     - e.tag_list.each do |tag|
