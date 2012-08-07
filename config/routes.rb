@@ -1,5 +1,4 @@
 Blog::Application.routes.draw do
-  resources :users
   resources :entries
   resources :sessions
 
@@ -11,7 +10,6 @@ Blog::Application.routes.draw do
   get 'license' => 'license#index', :as => 'license'
   get 'login' => 'sessions#new', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'
-  get 'users/new'
 
   root :to => 'entries#index'
 
