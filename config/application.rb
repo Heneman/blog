@@ -67,7 +67,7 @@ module Blog
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
-    ActsAsTaggableOn.delimiter = ' '
+    ActsAsTaggableOn.delimiter = ','
     ActsAsTaggableOn.force_lowercase = true
     ActsAsTaggableOn.force_parameterize = true
 
