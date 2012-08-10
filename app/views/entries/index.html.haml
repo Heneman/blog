@@ -18,7 +18,10 @@
     = "* Category - "
     = link_to e.category, category_path(:category => e.category)
     %br
-    = render :partial => 'layouts/disqus_count'
+    %p
+      = "* Commments - "
+      = link_to e, entry_path(e) + '#disqus_thread'
   .date= e.updated_at.strftime('* %a, %b %-e, %Y @ %l:%M %p %Z') 
   %br
+= render :partial => 'layouts/disqus_count'
 = will_paginate @entries
