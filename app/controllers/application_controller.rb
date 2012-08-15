@@ -2,8 +2,6 @@ class ApplicationController < ActionController::Base
   WillPaginate::ViewHelpers.pagination_options[:next_label] = 'Older'
   WillPaginate::ViewHelpers.pagination_options[:previous_label] = 'Newer'
 
-  respond_to :html, :atom
-
   protect_from_forgery
   helper_method :current_user, :authenticate_action
   helper :all
