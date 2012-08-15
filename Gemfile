@@ -33,6 +33,8 @@ gem 'will_paginate', '~> 3.0'
 gem 'acts-as-taggable-on', '~> 2.3.1'
 gem 'friendly_id'
 
+gem 'newrelic_rpm'
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', :require => 'bcrypt'
 

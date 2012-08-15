@@ -4,6 +4,7 @@
     %title Kyle Heneman
     = stylesheet_link_tag    'application', :media => 'all'
     = csrf_meta_tags
+    = auto_discovery_link_tag :atom, entries_path(:atom)
     %link{:href => "http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Sans+Mono|Droid+Serif:400,400italic", :rel => "stylesheet", :type => "text/css"}
 
   %body
