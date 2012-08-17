@@ -2,7 +2,7 @@ class Entry < ActiveRecord::Base
   include FriendlyId
   require 'redcarpet'
 
-  before_save :render_html
+  before_save :get_html
   belongs_to :user
   validates_presence_of :title, :tag_list, :markdown, :slug
   delegate  :title?, :category?, :markdown?, :to => :user
@@ -15,7 +15,7 @@ class Entry < ActiveRecord::Base
   # FriendlyID
   friendly_id :title, :use => :slugged
   
-  def render_html
+  def get_html
     return if self.markdown.blank?
 
     renderer = Redcarpet::Render::HTML.new(
