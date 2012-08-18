@@ -23,5 +23,5 @@
       = link_to e, entry_path(e, :anchor => "disqus_thread")
   .date= e.updated_at.strftime('* %a, %b %-e, %Y @ %l:%M %p %Z') 
   %br
-= render :partial => 'layouts/disqus_count'
+  = render :partial => 'layouts/disqus_count'
 = will_paginate @entries
