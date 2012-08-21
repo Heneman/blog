@@ -35,11 +35,11 @@ class Entry < ActiveRecord::Base
   end
 end
 
-require 'net/http'
-require 'uri'
-require 'nokogiri'
-
 class SyntaxHighlighter
+  require 'net/http'
+  require 'uri'
+  require 'nokogiri'
+
   PYGMENTS_URI = 'http://pygments.appspot.com/'
 
   def initialize(html)
