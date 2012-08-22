@@ -3,7 +3,7 @@
   .admin
     - if current_user
       = link_to 'Edit', edit_entry_path(e)
-      = link_to 'Delete', entry_path(e), :method => :delete, :confirm => 'Really really?'
+      = link_to 'Delete', e, :method => :delete, :confirm => 'Really really?'
   - if e.html.include? '<!--more-->'
     = raw excerpt e
     %p [#{link_to('more...', e)}]
