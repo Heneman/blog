@@ -1,10 +1,14 @@
 class EntriesController < ApplicationController
-  respond_to :html, :atom
-
   before_filter :authenticate_action
 
   def index
     @entries = Entry.order('created_at desc').paginate(:page => params[:page], :per_page => 5)
+
+    respond_to do |format|
+      format.html     # index.html.haml
+      format.atom     # index.atom.builder
+      format.xml  {render :xml => @entries}
+    end
   end
 
   def new
