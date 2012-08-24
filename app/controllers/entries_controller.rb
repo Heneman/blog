@@ -43,12 +43,4 @@ class EntriesController < ApplicationController
     @entry.destroy
     redirect_to entries_path, :notice => '#{@entry.title} has been deleted'
   end
-
-  def feed
-    @entries = Entry.order('created_at desc')
-
-    respond_to do |format|
-      format.atom
-    end
-  end
 end
