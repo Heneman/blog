@@ -3,12 +3,6 @@ class EntriesController < ApplicationController
 
   def index
     @entries = Entry.order('created_at desc').paginate(:page => params[:page], :per_page => 5)
-
-    respond_to do |format|
-      format.html     # index.html.haml
-      format.atom     # index.atom.builder
-      format.xml  {render :xml => @entries}
-    end
   end
 
   def new
@@ -48,5 +42,13 @@ class EntriesController < ApplicationController
     @entry = Entry.find_by_slug(params[:id])
     @entry.destroy
     redirect_to entries_path, :notice => '#{@entry.title} has been deleted'
+  end
+
+  def feed
+    @entries = Entry.order('created_at desc')
+
+    respond_to do |format|
+      format.atom
+    end
   end
 end
