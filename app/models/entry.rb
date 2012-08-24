@@ -31,7 +31,7 @@ class Entry < ActiveRecord::Base
 
     markdown = Redcarpet::Markdown.new(renderer, extensions)
 
-    self.html = Redcarpet::Render::SmartyPants.render(SyntaxHighlighter.new(markdown.render(self.markdown)).hightlight_html)
+    self.html = SyntaxHighlighter.new(markdown.render(self.markdown)).hightlight_html
   end
 end
 
