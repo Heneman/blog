@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+  respond_to :html, :atom
+
   before_filter :authenticate_action
 
   def index
