@@ -3,12 +3,6 @@ class EntriesController < ApplicationController
 
   def index
     @entries = Entry.order('created_at desc').paginate(:page => params[:page], :per_page => 5)
-
-    respond_to do |format|
-      format.html
-      format.xml {render :xml => @entries}
-      format.atom {headers["Content-Type"] = 'application/atom+xml; charset=utf-8'}
-    end
   end
 
   def new
