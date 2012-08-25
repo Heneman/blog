@@ -3,6 +3,11 @@ class EntriesController < ApplicationController
 
   def index
     @entries = Entry.order('created_at desc').paginate(:page => params[:page], :per_page => 5)
+
+    respond_to do |format|
+      format.html
+      format.atom {render :layout => false}
+    end
   end
 
   def new
