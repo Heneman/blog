@@ -6,7 +6,8 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.atom {render :layout => false}
+      format.xml {render :xml => @entries}
+      format.atom {headers["Content-Type"] = 'application/atom+xml; charset=utf-8'}
     end
   end
 

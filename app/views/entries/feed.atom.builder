@@ -8,7 +8,7 @@ atom_feed :language => 'en-US' do |feed|
     feed.entry(entry) do |e|
       entry.url entry_path(e)
       entry.title e.name
-      entry.content e.html, :type => 'html'
+      entry.content excerpt(e.html), :type => 'html'
       entry.updated(e.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ"))
      
       entry.author do |author|
