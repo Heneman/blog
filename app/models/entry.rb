@@ -55,6 +55,7 @@ class SyntaxHighlighter
       
       code.parent.replace request.body
     end
-    doc.to_s
+    out = Nokogiri::HTML.fragment(doc.to_s)
+    out.to_html
   end
 end
