@@ -20,7 +20,7 @@
     %br
     %p
       = "* Comments - "
-      = link_to e, entry_path(e, :anchor => "disqus_thread")
+      = link_to e, entry_path(e, :anchor => "disqus_thread"), :"data-disqus-identifier" => entry_path(e)
   .date= e.updated_at.strftime('* %a, %b %-e, %Y @ %l:%M %p %Z') 
   %br
   
