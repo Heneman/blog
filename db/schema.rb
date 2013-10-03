@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20120804224520) do
   create_table "entries", :force => true do |t|
     t.string   "title"
     t.string   "category"
+    t.string   "tags"
     t.text     "markdown"
     t.text     "html"
     t.datetime "created_at", :null => false
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20120804224520) do
     t.string   "password_hash"
     t.string   "password_salt"
     t.datetime "created_at",    :null => false
+    t.datetime "last_login_at"
     t.datetime "updated_at",    :null => false
   end
 
